@@ -1,0 +1,58 @@
+--- Create tables
+CREATE TABLE player (
+player_first_name TEXT,
+player_last_name TEXT,
+player_id SERIAL,
+season_id TEXT,
+team_id SERIAL,
+fg_percent INT,
+ft_percent INT,
+shot_type TEXT,
+height INT,
+primary_position TEXT,
+college TEXT,
+fg_distance INT,
+primary KEY(player_id)
+);
+
+
+CREATE TABLE team (
+team_id SERIAL,
+fg_percent INT,
+ft_percent INT,
+shot_type TEXT,
+height INT,
+primary_position TEXT,
+college TEXT,
+fg_distance INT,
+primary KEY(team_id)
+);
+
+CREATE TABLE season_league (
+season_id TEXT,
+team_id SERIAL,
+attendance_per_game INT,
+games_played INT,
+primary KEY(season_id)
+);
+
+
+
+--- Insert data into player table
+INSERT INTO player (player_first_name, player_last_name, season_id) VALUES 
+('Amy', 'Esplain', '44eeaa8a-7cd3-4153-abf6-32dc62098001'),
+('Rami', 'Esplain', '44eeaa8a-7cd3-4153-abf6-32dc62098001'),
+('Brook', 'Esplain', '44eeaa8a-7cd3-4153-abf6-32dc62098001');
+
+--- Insert data into team table
+INSERT INTO team (team_id, fg_percent, ft_percent, college) VALUES 
+('12345', '0.25', '0.6', 'University of Arizona'),
+('13456', '0.50', '0.8', 'University of New Mexico'),
+('54971', '0.60', '0.9', 'University of Michigan');
+
+--- Insert data into season_league table
+INSERT INTO season_league (season_id, team_id, attendance_per_game) VALUES 
+('44eeaa8a-7cd3-4153-abf6-32dc62098001', '12345', '2500000'),
+('44eeaa8a-7cd3-4153-abf6-32dc62098001', '13456', '2000000'),
+('44eeaa8a-7cd3-4153-abf6-32dc62098001', '54971', '4000000');
+

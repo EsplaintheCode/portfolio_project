@@ -1,0 +1,35 @@
+# WNBA Project
+
+# Description
+This project creates a backend app that has WNBA information for all teams and players.
+The information reflects the following statistics: 3 point %, free throw % and field goal percent % for each player and
+for each team.
+
+# Contents
+ The package includes the following files:
+1. seed.py which will seed the database WBA with real-time information for all players and team in the WNBA league. 
+
+2. models.py has the model structure for the database 
+
+3. team.py has the API information for only the Team Model.  
+
+# API table for Team Model
+| Endpoints                                 | Methiods    | Parameters
+| -----------                               | ----------- | -----------
+|  http://localhost:3000/team/Team_Name     | GET         | Team_Name
+|  http://localhost:3000/team/All           | GET         | All
+| http://localhost:3000/team/Team_Name      | DELETE      | Team Name
+| http://localhost:3000/team                | POST        | Team Name
+| http://localhost:3000/team/Team_Name      | PATCH       | Team Name
+
+
+# Retrospective Questions
+1. The project design evolved over time by having the data pull real-time. I wanted to be able to have the ability
+to use the data for real time analysis. Additionally, I wanted to create an API for both players and teams but 
+only finished the teams.
+2. ORM was chosen since the class heavily emphasized it through the workshops and exercises.
+3. Future improvements the following:
+- Building out the player API
+- Reconfigure the primary keys and add unique constraints
+- Create data visualizers to do comparisons
+- Create an API that pulls all player stats from a Team API call
